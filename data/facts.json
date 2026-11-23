@@ -1,0 +1,7 @@
+{
+  "vehicles": [{"serial":"CAR-1","sold_at":"2025-06-01"},{"serial":"CAR-2","sold_at":"2025-07-01"}],
+  "parts": [{"serial":"PART-77","vendor":"V-A","warranty_months":24},{"serial":"PART-88","vendor":"V-B","warranty_months":12}],
+  "installations": [{"part":"PART-77","vehicle":"CAR-1","from":"2025-06-01","to":"2026-11-10","work_order":"WO-9","revision":1},{"part":"PART-77","vehicle":"CAR-2","from":"2026-11-10","to":null,"work_order":"WO-19","revision":2,"correction_received":"2026-11-18"}],
+  "returns": [{"id":"RET-7","part":"PART-77","state":"in-transit","sent_at":"2026-11-12"}],
+  "claims": [{"id":"CLM-9","part":"PART-77","vehicle":"CAR-1","work_order":"WO-9","state":"accepted","receipt":"VENDOR-ACK-9"},{"id":"CLM-19","part":"PART-77","vehicle":"CAR-2","work_order":"WO-19","state":"pending"}]
+}
