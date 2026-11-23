@@ -1,0 +1,70 @@
+{
+  "run_date": "2026-11-23",
+  "rules": {"vehicle_warranty_months": 36},
+  "vehicles": [
+    {"serial": "CAR-1", "sold_at": "2025-06-01"},
+    {"serial": "CAR-2", "sold_at": "2025-07-01"},
+    {"serial": "CAR-3", "sold_at": "2022-01-10"}
+  ],
+  "parts": [
+    {"serial": "PART-77", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "PART-88", "vendor": "V-B", "warranty_months": 12},
+    {"serial": "P-201", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "P-301", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "P-401", "vendor": "V-B", "warranty_months": 12},
+    {"serial": "P-501", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "P-601", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "P-701", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "SHARED-X", "vendor": "V-A", "warranty_months": 24},
+    {"serial": "SHARED-X", "vendor": "V-B", "warranty_months": 12}
+  ],
+  "installations": [
+    {"part": "PART-77", "vendor": "V-A", "vehicle": "CAR-1", "from": "2025-06-01", "to": "2026-11-10", "work_order": "WO-9", "revision": 1},
+    {"part": "PART-77", "vendor": "V-A", "vehicle": "CAR-2", "from": "2026-11-10", "to": null, "work_order": "WO-19", "revision": 2, "correction_received": "2026-11-18"},
+
+    {"part": "P-201", "vendor": "V-A", "vehicle": "CAR-1", "from": "2026-02-01", "to": null, "work_order": "WO-201", "revision": 1},
+    {"part": "P-201", "vendor": "V-A", "vehicle": "CAR-2", "from": "2026-03-01", "to": null, "work_order": "WO-202", "revision": 1},
+
+    {"part": "P-301", "vendor": "V-A", "vehicle": "CAR-1", "from": "2026-01-01", "to": null, "work_order": "WO-301", "revision": 1},
+
+    {"part": "P-401", "vendor": "V-B", "vehicle": "CAR-2", "from": "2026-05-01", "to": "2026-09-01", "work_order": "WO-401", "revision": 1},
+    {"part": "P-401", "vendor": "V-B", "vehicle": "CAR-3", "from": "2026-09-01", "to": null, "work_order": "WO-402", "revision": 1},
+
+    {"part": "P-501", "vendor": "V-A", "vehicle": "CAR-1", "from": "2026-04-01", "to": null, "work_order": "WO-501", "revision": 1},
+    {"part": "P-501", "vendor": "V-A", "vehicle": "CAR-2", "from": "2026-04-01", "to": null, "work_order": "WO-501", "revision": 2, "correction_received": "2026-10-01"},
+
+    {"part": "P-601", "vendor": "V-A", "vehicle": "CAR-1", "from": "2026-06-01", "to": null, "work_order": "WO-601", "revision": 1},
+    {"part": "P-601", "vendor": "V-A", "vehicle": "CAR-2", "from": "2026-06-01", "to": null, "work_order": "WO-601", "revision": 2, "correction_received": "2026-10-05"},
+
+    {"part": "P-701", "vendor": "V-A", "vehicle": "CAR-3", "from": "2026-08-01", "to": null, "work_order": "WO-701", "revision": 1},
+
+    {"part": "SHARED-X", "vendor": "V-A", "vehicle": "CAR-1", "from": "2026-07-01", "to": null, "work_order": "WO-801", "revision": 1},
+    {"part": "SHARED-X", "vendor": "V-B", "vehicle": "CAR-2", "from": "2026-07-15", "to": null, "work_order": "WO-802", "revision": 1}
+  ],
+  "returns": [
+    {"id": "RET-7", "part": "PART-77", "vendor": "V-A", "state": "in-transit", "sent_at": "2026-11-12", "work_order": "WO-9"},
+
+    {"id": "RET-301", "part": "P-301", "vendor": "V-A", "state": "in-transit", "sent_at": "2026-11-20", "work_order": "WO-301"},
+
+    {"id": "RET-401", "part": "P-401", "vendor": "V-B", "state": "received", "sent_at": "2026-09-02", "received_at": "2026-09-08", "work_order": "WO-401"},
+
+    {"id": "RET-501", "part": "P-501", "vendor": "V-A", "state": "in-transit", "sent_at": "2026-10-02", "work_order": "WO-501"},
+
+    {"id": "RET-601", "part": "P-601", "vendor": "V-A", "state": "in-transit", "sent_at": "2026-10-06", "work_order": "WO-601"},
+
+    {"id": "RET-701", "part": "P-701", "vendor": "V-A", "state": "in-transit", "sent_at": "2026-11-22", "work_order": "WO-701"}
+  ],
+  "claims": [
+    {"id": "CLM-9", "part": "PART-77", "vendor": "V-A", "vehicle": "CAR-1", "work_order": "WO-9", "state": "accepted", "receipt": "VENDOR-ACK-9", "reason": "内部总成磨损"},
+    {"id": "CLM-19", "part": "PART-77", "vendor": "V-A", "vehicle": "CAR-2", "work_order": "WO-19", "state": "pending", "reason": "内部总成磨损"},
+
+    {"id": "CLM-401", "part": "P-401", "vendor": "V-B", "vehicle": "CAR-2", "work_order": "WO-401", "state": "pending", "reason": "制造缺陷", "physical_note": "旧件完好可检"},
+
+    {"id": "CLM-201", "part": "P-201", "vendor": "V-A", "vehicle": "CAR-1", "work_order": "WO-201", "state": "pending", "reason": "异响"},
+    {"id": "CLM-202", "part": "P-201", "vendor": "V-A", "vehicle": "CAR-2", "work_order": "WO-202", "state": "pending", "reason": "异响"},
+
+    {"id": "CLM-501", "part": "P-501", "vendor": "V-A", "vehicle": "CAR-1", "work_order": "WO-501", "state": "pending", "reason": "误报故障"},
+
+    {"id": "CLM-601", "part": "P-601", "vendor": "V-A", "vehicle": "CAR-1", "work_order": "WO-601", "state": "accepted", "receipt": "VENDOR-ACK-601", "reason": "电控失效"}
+  ]
+}
